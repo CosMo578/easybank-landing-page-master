@@ -2,6 +2,7 @@ import Icon1 from "/images/icon-online.svg";
 import Icon2 from "/images/icon-budgeting.svg";
 import Icon3 from "/images/icon-onboarding.svg";
 import Icon4 from "/images/icon-api.svg";
+import Reveal from "./Reveal";
 
 function AboutCard() {
   const cardData = [
@@ -30,13 +31,15 @@ function AboutCard() {
     <>
       {cardData.map((card) => {
         return (
-          <div key={card.src}>
-            <img src={card.src} alt="" className="mx-auto md:mx-0" />
-            <h2 className="my-3 text-2xl">{card.title}</h2>
-            <p className="mx-auto w-[89%] md:mx-0 md:w-full">
-              {card.description}
-            </p>
-          </div>
+          <Reveal key={card.src}>
+            <div>
+              <img src={card.src} alt="" className="mx-auto md:mx-0" />
+              <h2 className="my-3 text-2xl">{card.title}</h2>
+              <p className="mx-auto w-[89%] md:mx-0 md:w-full">
+                {card.description}
+              </p>
+            </div>
+          </Reveal>
         );
       })}
     </>

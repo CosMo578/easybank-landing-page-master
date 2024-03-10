@@ -32,7 +32,7 @@ export function Header({ isOpen, setIsOpen }) {
         onClick={() => {
           setIsOpen((status) => !status);
         }}
-        className="z-20 inline-block w-6 hover:cursor-pointer lg:hidden"
+        className="z-20 inline-block w-6 transition-all ease-in-out hover:cursor-pointer lg:hidden"
       >
         {isOpen === true ? (
           <img src={Close} alt="" />
