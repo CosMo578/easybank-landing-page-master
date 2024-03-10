@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --DarkBlue: hsl(233, 26%, 24%);
+  --LimeGreen: #36e464;
+  --BrightCyan: hsl(192, 70%, 51%);
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --LightGrayishBlue: hsl(220, 16%, 96%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
+
+img {
+  @apply select-none;
+}
+
+button {
+  background: linear-gradient(
+    to right,
+    var(--LimeGreen) 20%,
+    var(--BrightCyan)
+  );
+  @apply rounded-3xl px-4 py-2 font-semibold text-white hover:saturate-50;
+}
+
+p {
+  @apply font-medium text-gray-400;
+}
+
+nav {
+  box-shadow: 0px 0 200px rgba(0, 0, 15, 0.59);
+  @apply shadow-none;
+}
+
+main {
+  background-image: url("/images/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 -5.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    background-position: 0 -10rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    background-image: url("/images/bg-intro-desktop.svg");
+    background-size: 100% 150%;
+    background-position: 30rem -12rem;
+  }
+
+  header nav ul li:hover::after {
+    content: "";
+    background: linear-gradient(
+      to right,
+      var(--LimeGreen) 20%,
+      var(--BrightCyan)
+    );
+    animation: wide 0.2s ease-in-out forwards;
+    @apply absolute -bottom-[132%] left-0 h-1 w-0;
+  }
+
+  @keyframes wide {
+    from {
+      @apply w-0 opacity-0;
+    }
+    to {
+      @apply w-full opacity-100;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  main {
+    background-size: 60% 150%;
+    background-position: 47rem -12rem;
+  }
+}
+
+footer li {
+  @apply cursor-pointer hover:text-LimeGreen [&_path]:hover:fill-LimeGreen;
+}
